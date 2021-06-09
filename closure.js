@@ -13,6 +13,7 @@
 // - maintaining state in async world
 // - setTimeouts
 // - Iterators
+
 // function x() {
 //     var a = 7;
 //     function y() {
@@ -183,7 +184,55 @@ sum(2)(3)(4);
 
 // Namaste JavScript
 // Closures with setTimeout
+// closure + setTimeout Interview questions
+function xClosure1() {
+    var i = 1;
+    setTimeout(() => {
+        console.log(i)
+    },1000)
+    console.log('Pradeep')
+}
+//xClosure1();
+
+// Problem - Print from 1-5 uisng setTimeour + closure
+
+function xClosureProblem() {
+    for( var i = 1; i<= 5; i++) {
+        setTimeout(function() {
+        console.log(i)
+        },i* 1000);
+    }
+}
+//xClosureProblem();
+// 6
+// 6
+// 6 
+// 6
+// 6
 
 
+// Soltion 1
+function xClosure2() {
+    for( let i = 1; i<= 5; i++) {
+        setTimeout(function() {
+            console.log(i)
+        },i* 1000);
+    }
+}
 
+//xClosure2();
+// Soltion 2
+function xClosure3() {
+    for( var i = 1; i<= 5; i++) {
+        function close(i) {
+            setTimeout(function() {
+            console.log(i)
+        },i* 1000);
+        }
+        close(i);
+    }
+}
 
+//xClosure3();
+
+   

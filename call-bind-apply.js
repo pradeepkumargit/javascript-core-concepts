@@ -17,7 +17,7 @@ var person2 = {
 console.log(person.getFullName.apply(person2));
 console.log(person.getFullName.call(person2));
 // var logPersonName = person.getFullName.bind(person2);
-// console.log(logPersonName);
+// console.log(logPersonName());
 
 var logName = function(lang1, lang2) {
     console.log('Logged:' + ' ' + this.getFullName());

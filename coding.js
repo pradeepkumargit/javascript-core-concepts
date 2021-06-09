@@ -72,7 +72,7 @@ function countLikeAndDislike(mystring) {
         console.log('dislike',dislike)
     }
 }
-console.log(countLikeAndDislike('101101'));
+///console.log(countLikeAndDislike('101101'));
 
 // Object are pass by reference or pass by value
 //1
@@ -130,52 +130,6 @@ console.log(countLikeAndDislike('101101'));
 })();
 
 
-/**
-  assignment: twoSum
-  Given an array of integers nums and an integer target,
-  return indices of the two numbers such that they add up to target.
-  You may assume that each input would have exactly one solution,
-  and you may not use the same element twice.
-  You can return the answer in any order.
-  
-  Example 1:
-  Input: nums = [3,2,4], target = 6
-  Output: [1,2]
-  Output: Because nums[1] + nums[2] == 6, we return [1, 2].
-
-  Example 2:
-  Input: nums = [3,3], target = 6
-  Output: [0,1]
-
-  constraints:
-  Only one valid answer exists.
-*/
-
-/**
- * @param {number[]} nums
- * @param {number} target
- * @return {number[]}
- */
-const twoSum = (nums, target) => {
-    // write body for twoSum function
-    var result = [];
-    for (var i = 0; i < nums.length; i++) {
-        for (var j = i; j < nums.length; j++) {
-            if ((nums[i] + nums[j]) === target) {
-                result.push(i, j);
-                console.log('what is result i', result);
-            }
-
-        }
-    }
-    return result;
-
-};
-  
-  // console.log(twoSum([2, 7, 11, 15], 13)); // expected: [0, 2]
-  //console.log(twoSum([2, 7, 11, 15], 13));
-  
-  //console.log(twoSum([1,2,3,4,5,6,7,8,9,10], 3));
 
 function transformString(string) {
     //var string = 'thisIsAVariable';
@@ -231,7 +185,7 @@ var countString = '';
       countString = countString + item + counts[item];
       console.log(countString)
    }
-   //console.log(mostFrequent)
+   //console.log('mostFrequent',mostFrequent)
    return mostFrequent;
 })(arr1);
 // output : "a5b2c2"
@@ -331,4 +285,266 @@ const obj = {
     })
     return required;
 }
- console.log(searchByPair(obj, {'productId': '123'}));
+//console.log(searchByPair(obj, {'productId': '123'}));
+
+// 30th May start
+
+//1.Calculate Sum of All Numbers in a Jagged Array
+
+let ar = [1, 2, [15, [23], [5, 12]], [100]];
+let flatArray = ar.join().split(',');
+//console.log('flatArray',flatArray);
+
+let sumofJaggedArray = flatArray.reduce( (totalSum,item) =>  {
+ return Number(totalSum) + Number(item);
+},0);
+//console.log('sumofJaggedArray',sumofJaggedArray);
+
+//2.Loop through an object
+const person = { name: "Shoaib", Age: 25, Gender: "Male" };
+for(let property in person) {
+//console.log(`${property}: ${person[property]}`);
+}
+
+const person2 = Object.values(person);
+//console.log('only person 2',person2)
+
+// 3, find in objecr
+
+const students = [
+  {name: 'Shoaib', roll: 2},
+  {name: 'Mehedi', roll: 10},
+  {name: 'Alex', roll: 5}
+];
+
+const studentAlex = students.find(student => student.name === 'Alex');
+//console.log('studentAlex',studentAlex)
+
+//4.sort alphabetically
+const name = ['Shoaib', 'Mehedi', 'Alex', 'Jane'];
+const sortedName = name.sort();
+//console.log('sortedName',sortedName)
+
+//5.sort numerically
+
+const arr5 = [1, 30, 4, 21, 100000];
+
+const sortedArr5 = arr5.sort( (a,b) => a -b);
+
+//nsole.log('sortedArr5',sortedArr5)
+
+//6. Reverse a String
+ let word = 'JavaScript is best';
+ let reversedSting = word.split("").reverse().join("");
+ let reversedStingByWord = word.split(" ").reverse().join(" ");
+ //console.log('reversedStingByWord',reversedStingByWord);
+ 
+ //7.Swap values
+ 
+let a = 50, b = 16;
+[a,b] = [b,a];
+//console.log(a,b);
+
+//8. Convert an array to an object
+
+var fruits = ["banana", "apple", "orange"];
+
+const convetedFruit = {...fruits};
+//console.log('convetedFruit',convetedFruit)
+
+//9. Get random values from an array
+const colors = ["red", "pink", "yellow", "black", "blue"];
+
+const randomColor = colors[Math.floor(Math.random() * colors.length)];
+//console.log('randomColor',randomColor)
+
+//10.Remove duplicates from an array
+var fruits = ["banana", "apple", "orange", "watermelon", "apple", "orange", "grape", "apple"];
+
+const removeDuplicate = [...new Set(fruits)];
+//console.log('removeDuplicate',removeDuplicate);
+
+//11.Find the intersection of two arrays
+
+var numOne = [0, 2, 4, 6, 8, 8];
+var numTwo = [1, 2, 3, 4, 5, 6];
+
+const intersectionOfArray = [... new Set(numOne)].filter(item => numTwo.includes(item));
+//console.log('intersectionOfArray',intersectionOfArray);
+
+//12. Print PizzBuzz
+/* for(var i =1; i<=20; i++) {
+  if( i %15 ===0) {
+   console.log('FizzBuzz');
+  } else if( i % 3 ===0) {
+     console.log('Fizz');
+  } else if( i % 5 ===0) {
+     console.log('Bizz');
+  } else {
+     console.log(i)
+  }
+} */
+
+
+// 13. Count the word in the string
+function wordCount(str) {
+   var stringArray = str.split(' ');
+   var count = 0;
+   for (var i = 0; i < stringArray.length; i++) {
+     var word = stringArray[i];
+     if (/[A-Za-z]/.test(word)) {
+       count++
+     }
+   }
+   return count;
+} 
+
+
+//console.log(wordCount('This is a block-of 99'));
+
+// 14. Find the firt occurence index of substring
+// https://stackoverflow.com/questions/3410464/how-to-find-indices-of-all-occurrences-of-one-string-in-another-in-javascript
+
+var s = 'juliasamanthantjulia';
+var x = 'ant';
+function firstOc(s,x) {
+	if (!s) {
+    return [];
+  }
+  // if find is empty string return all indexes.
+  if (!x) {
+    // or shorter arrow function:
+    return source.split('').map((_,i) => i);
+  }
+  var result = [];
+  for (var i = 0; i < s.length; ++i) {
+    // If you want to search case insensitive use 
+    if (s.substring(i, i + x.length).toLowerCase() == x) {
+    //if (s.substring(i, i + x.length) == x) {
+      result.push(i);
+    }
+  }
+  console.log(result[0]);
+  return result;
+}
+//firstOc(s,x);
+
+
+// 15 -Most repeated no/char in an array
+
+var arr = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
+var mf= 1;
+var count = 0;
+var item;
+for( var i = 0; i < arr.length; i++) {
+ for( var j = i; j<arr.length;j++) {
+   if(arr[i] == arr[j]) {
+     count++
+   }
+   if(mf < count) {
+    mf = count;
+    item  = arr[i]
+   }
+ }
+ count = 0;
+}
+//console.log(item, mf, 'times');
+//const first = performance.now();
+// const second = performance.now();
+//console.log(first - second); 
+
+// closure + setTimeout Interview questions
+function xClosure1() {
+ var i = 1;
+ setTimeout(() => {
+  console.log(i)
+ },1000)
+ console.log('Pradeep')
+}
+//xClosure1();
+// Problem - Print from 1-5 uisng setTimeour + closure
+
+function xClosureProblem() {
+ for( var i = 1; i<= 5; i++) {
+   setTimeout(function() {
+    console.log(i)
+   },i* 1000);
+ }
+}
+//xClosureProblem();
+
+// Soltion 1
+function xClosure2() {
+ for( let i = 1; i<= 5; i++) {
+   setTimeout(function() {
+    console.log(i)
+   },i* 1000);
+ }
+}
+
+//xClosure2();
+// Soltion 2
+function xClosure3() {
+ for( var i = 1; i<= 5; i++) {
+  function close(i) {
+  	setTimeout(function() {
+    console.log(i)
+   },i* 1000);
+  }
+  close(i);
+ }
+}
+
+//xClosure3();
+
+// 16 .Change body background color on click
+let counter = 0;
+function changeColor() {
+  let colors = ['red','green', 'blue'];
+  document.body.style.backgroundColor = colors.slice(counter, counter+1);
+  if( counter === colors.length -1) {
+   counter = 0;
+  } else {
+   counter++;
+  }
+}
+
+// 17.
+
+var myString = 'eN:q=0.8,en:q=0.4,En-Pa,Lp-Ma,eG:q=0.6';
+function showmyTextWithNumber(str) {
+    console.log('first string',str);
+    let stringSplit = str.split(',');   
+    console.log('stringSplit',stringSplit);
+    //console.log('after sort',stringSplit.sort())
+    let result= [];
+    let resultwithQ = [];
+    let resultwithOutQ = [];
+    for (let i = 0; i < stringSplit.length; i++) {
+        if (stringSplit[i].includes('q')) {
+            console.log('value with q ', stringSplit[i])
+            //eN:q=0.8,en:q=0.4, eG:q=0.6
+            resultwithQ.push(stringSplit[i])
+        } else {
+            console.log('value without q ', stringSplit[i])
+            //En-Pa
+            resultwithOutQ.push(stringSplit[i]);
+        }
+    }
+    //resultwithQ = {...resultwithQ};
+    for( let item of resultwithQ) {
+        let weitage = item.substring(item.length - 3);
+        console.log('weitage',weitage)
+        result.push(weitage)
+    }
+    console.log('result',result);
+    //console.log('result',result.sort().reverse());
+    console.log('resultwithQ',resultwithQ);
+
+    let finalResult = [...resultwithOutQ,...resultwithQ]
+    console.log('finalResult',finalResult);
+    return finalResult;
+}
+
+showmyTextWithNumber(myString);
+   
